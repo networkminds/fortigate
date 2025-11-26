@@ -1,0 +1,26 @@
+	"https://172.19.1.1":
+	  token: xxxxxxxxxxxxxxxxxxxxxxxx
+	  # If you have a smaller fortigate unit you might want
+	  # to exclude sensors as they do not have any
+	  probes:
+	    exclude:
+	      - System/SensorInfo
+	      - System/HAChecksums
+	      - Firewall/IpPool
+	      - System/HAChecksums
+	      - System/VDOMResources
+	      - System/Fortimanager/Status
+	      - System/SDNConnector
+	      - User/Fsso
+	      - Wifi
+	      - Log/Fortianalyzer/Status
+	      - Log/Fortianalyzer/Queue
+	      - System/HAStatistics
+	      - System/LinkMonitor
+	      - VirtualWAN/HealthCheck
+	      - BGP
+	      - OSPF
+	      - Firewall/LoadBalance
+	      - Wifi/Clients
+	      - Wifi/ManagedAP
+	      - Switch/ManagedSwitch
