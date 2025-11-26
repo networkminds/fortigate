@@ -8,7 +8,7 @@ scrape_configs:
 	   metrics_path: /probe
 	   static_configs:
 	       - targets:
-	         - https://172.19.254.254          # -----------------------> Fortigate API IP address
+	         - https://172.19.1.1          # -----------------------> Fortigate API IP address
 	 
 	   relabel_configs:
 	       - source_labels: [__address__]
