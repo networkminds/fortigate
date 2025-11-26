@@ -1,0 +1,21 @@
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+	
+	
+scrape_configs:
+	 - job_name: "fortigate_exporter"
+	   metrics_path: /probe
+	   static_configs:
+	       - targets:
+	         - https://172.19.254.254          # -----------------------> Fortigate API IP address
+	 
+	   relabel_configs:
+	       - source_labels: [__address__]
+	         target_label: __param_target
+	       - source_labels: [__param_target]
+	         target_label: instance
+	         # Drop the https:// and port (if specified) for the 'instance=' label
+	         regex: '(?:.+)(?::\/\/)([^:]*).*'
+	       - target_label: __address__
+	         replacement: '10.77.0.201:9710'    # ----------------------> Local configured IP address
